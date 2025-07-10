@@ -1,0 +1,14 @@
+{% extends 'flowers/base.html' %}
+{% block title %}
+	{{ product.name }}
+{% endblock %}
+
+{% block content %}
+	<div class="product-detail">
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="300">
+        <h1>{{ product.name }}</h1>
+        <p>Цена: {{ product.price }} руб.</p>
+        <p>{{ product.description }}</p>
+        <button>Добавить в корзину</button>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'flowers/base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+	<h2>Популярные букеты</h2>
+    <div class="products">
+        {% for product in products %}
+            <div class="product-card">
+                <h3>{{ product.name }}</h3>
+                <p>Цена: {{ product.price }} руб.</p>
+                <a href="{% url 'flowers:product_detail' product.id %}">Подробнее</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
